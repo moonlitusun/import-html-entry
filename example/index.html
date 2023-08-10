@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>index</title>
-</head>
-<body>
-<script src="../dist/import-html-entry.js"></script>
-<script>
+	<head>
+		<meta charset="UTF-8" />
+		<title>index</title>
+	</head>
+	<body>
+		<script type="module">
+			import importHTML from "../src/index.js";
 
-	importHTML('./template.html').then(res => {
-		console.log(res.template);
-		res.execScripts().then(exports => {
-			console.log(exports);
-		});
-	});
-
-</script>
-</body>
+			importHTML("./template.html").then((res) => {
+				// console.log(res.template);
+				console.log(res.template, '<-- res');
+				res.execScripts().then((exports) => {
+					console.log(exports, '<-- exports');
+				});
+			});
+		</script>
+	</body>
 </html>

@@ -4,7 +4,7 @@
  * @since 2018-08-15 11:37
  */
 
-import processTpl, { genLinkReplaceSymbol, genScriptReplaceSymbol } from './process-tpl';
+import processTpl, { genLinkReplaceSymbol, genScriptReplaceSymbol } from './process-tpl.js';
 import {
 	defaultGetPublicPath,
 	evalCode,
@@ -13,7 +13,7 @@ import {
 	noteGlobalProps,
 	readResAsString,
 	requestIdleCallback,
-} from './utils';
+} from './utils.js';
 
 const styleCache = {};
 const scriptCache = {};
@@ -184,7 +184,7 @@ export function execScripts(entry, scripts, proxy = window, opts = {}) {
 				const markName = `Evaluating script ${scriptSrc}`;
 				const measureName = `Evaluating Time Consuming: ${scriptSrc}`;
 
-				if (process.env.NODE_ENV === 'development' && supportsUserTiming) {
+				if (true && supportsUserTiming) {
 					performance.mark(markName);
 				}
 
@@ -220,7 +220,7 @@ export function execScripts(entry, scripts, proxy = window, opts = {}) {
 					}
 				}
 
-				if (process.env.NODE_ENV === 'development' && supportsUserTiming) {
+				if (true && supportsUserTiming) {
 					performance.measure(measureName, markName);
 					performance.clearMarks(markName);
 					performance.clearMeasures(measureName);
