@@ -248,6 +248,7 @@ export function execScripts(entry, scripts, proxy = window, opts = {}) {
 }
 
 export default function importHTML(url, opts = {}) {
+	debugger
 	let fetch = defaultFetch;
 	let autoDecodeResponse = false;
 	let getPublicPath = defaultGetPublicPath;
